@@ -16,10 +16,7 @@ namespace svg
 	//destructor
 	Model::~Model(void)
 	{
-		for(const Object* object : m_objects)
-		{
-			delete object;
-		}
+		return;
 	}
 
 	//data
@@ -47,10 +44,6 @@ namespace svg
 	}
 	void Model::clear_objects(void)
 	{
-		for(const Object* object : m_objects)
-		{
-			delete object;
-		}
 		m_objects.clear();
 	}
 	std::vector<Object*>& Model::objects(void)

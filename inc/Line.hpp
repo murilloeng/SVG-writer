@@ -11,12 +11,14 @@ namespace svg
 	{
 	public:
 		//constructors
-		Line(double, double, double, double);
+		Line(void);
 
 		//destructor
 		~Line(void);
+
+		//write
+		void write(FILE*) const override;
 	
-	private:
 		//data
 		math::vec2 m_x1;
 		math::vec2 m_x2;

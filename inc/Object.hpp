@@ -16,5 +16,8 @@ namespace svg
 
 		//write
 		virtual void write(FILE*) const = 0;
+
+		//color
+		void color(char*, const double*) const;
 	};
 }
