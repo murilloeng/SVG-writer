@@ -23,6 +23,6 @@ namespace svg
 		math::vec2 m_x1;
 		math::vec2 m_x2;
 		math::vec3 m_stroke;
-		unsigned m_stroke_width;
+		double m_stroke_width;
 	};
 }

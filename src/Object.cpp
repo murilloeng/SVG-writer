@@ -1,4 +1,5 @@
 //svg
+#include "SVG-writer/inc/Affine.hpp"
 #include "SVG-writer/inc/Object.hpp"
 
 namespace svg
@@ -13,6 +14,20 @@ namespace svg
 	Object::~Object(void)
 	{
 		return;
+	}
+
+	//write
+	void Object::write_affine(FILE* file) const
+	{
+		//check
+		if(m_affines.empty()) return;
+		//header
+		fprintf(file, "transform=\"");
+		for(const Affine* affine : m_affines)
+		{
+			affine->write(file);
+		}
+		fprintf(file, "\"");
 	}
 
 	//color
