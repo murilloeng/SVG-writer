@@ -20,42 +20,6 @@ namespace svg
 		return;
 	}
 
-	//data
-	unsigned Model::width(void) const
-	{
-		return m_width;
-	}
-	unsigned Model::width(unsigned width)
-	{
-		return m_width = width;
-	}
-
-	unsigned Model::height(void) const
-	{
-		return m_height;
-	}
-	unsigned Model::height(unsigned height)
-	{
-		return m_height = height;
-	}
-
-	void Model::add_object(Object* object)
-	{
-		m_objects.push_back(object);
-	}
-	void Model::clear_objects(void)
-	{
-		m_objects.clear();
-	}
-	std::vector<Object*>& Model::objects(void)
-	{
-		return m_objects;
-	}
-	const std::vector<Object*>& Model::objects(void) const
-	{
-		return m_objects;
-	}
-
 	//file
 	void Model::write(const char* path) const
 	{

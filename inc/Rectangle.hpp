@@ -1,6 +1,5 @@
 //math
 #include "Math/inc/linear/vec2.hpp"
-#include "Math/inc/linear/vec3.hpp"
 
 //svg
 #include "SVG-writer/inc/Object.hpp"
