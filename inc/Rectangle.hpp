@@ -24,8 +24,5 @@ namespace svg
 		math::vec2 m_x;
 		double m_width;
 		double m_height;
-		math::vec3 m_fill;
-		math::vec3 m_stroke;
-		double m_stroke_width;
 	};
 }

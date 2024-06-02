@@ -1,5 +1,6 @@
 //std
 #include <cstdio>
+#include <cstdlib>
 
 //svg
 #include "SVG-writer/inc/Model.hpp"
@@ -72,5 +73,8 @@ namespace svg
 		fprintf(file, "</svg>");
 		//close
 		fclose(file);
+		//command
+		char cmd[200];
+		sprintf(cmd, "gio open %s", path); system(cmd);
 	}
 }

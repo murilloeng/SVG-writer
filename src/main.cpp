@@ -1,3 +1,6 @@
+//std
+#include <cstring>
+
 //svg
 #include "SVG-writer/inc/Line.hpp"
 #include "SVG-writer/inc/Model.hpp"
@@ -12,8 +15,8 @@ void icon_add(void)
 	svg::Polygon polygon;
 	//polygon
 	polygon.m_stroke_width = 10;
-	polygon.m_fill = {0.00, 0.50, 0.00};
-	polygon.m_stroke = {0.00, 0.00, 0.00};
+	strcpy(polygon.m_fill, "#007f00");
+	strcpy(polygon.m_stroke, "#000000");
 	polygon.m_points.push_back({350, 800});
 	polygon.m_points.push_back({450, 800});
 	polygon.m_points.push_back({450, 450});
@@ -44,8 +47,8 @@ void icon_remove(void)
 	rotation.m_x2 = 400;
 	//polygon
 	polygon.m_stroke_width = 10;
-	polygon.m_fill = {0.50, 0.00, 0.00};
-	polygon.m_stroke = {0.00, 0.00, 0.00};
+	strcpy(polygon.m_fill, "#7f0000");
+	strcpy(polygon.m_stroke, "#000000");
 	polygon.m_points.push_back({350, 800});
 	polygon.m_points.push_back({450, 800});
 	polygon.m_points.push_back({450, 450});
@@ -69,7 +72,7 @@ void icon_remove(void)
 int main(void)
 {
 	//test
-	icon_remove();
+	icon_add();
 	//return
 	return 0;
 }

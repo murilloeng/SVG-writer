@@ -5,7 +5,7 @@
 namespace svg
 {
 	//constructor
-	Object::Object(void)
+	Object::Object(void) : m_fill("none"), m_stroke("none"), m_stroke_width(0)
 	{
 		return;
 	}
@@ -17,12 +17,16 @@ namespace svg
 	}
 
 	//write
+	void Object::write_extra(FILE* file) const
+	{
+		fprintf(file, " fill=\"%s\" stroke=\"%s\" stroke-width=\"%.2lf\"", m_fill, m_stroke, m_stroke_width);
+	}
 	void Object::write_affine(FILE* file) const
 	{
 		//check
 		if(m_affines.empty()) return;
 		//header
-		fprintf(file, "transform=\"");
+		fprintf(file, " transform=\"");
 		for(const Affine* affine : m_affines)
 		{
 			affine->write(file);

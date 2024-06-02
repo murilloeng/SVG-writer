@@ -23,9 +23,6 @@ namespace svg
 		void write(FILE*) const override;
 	
 		//data
-		math::vec3 m_fill;
-		math::vec3 m_stroke;
-		double m_stroke_width;
 		std::vector<math::vec2> m_points;
 	};
 }
