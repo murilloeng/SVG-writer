@@ -76,8 +76,20 @@ void icon_cell(void)
 {
 	//data
 	svg::Model model;
+	svg::Line lines[4];
 	svg::Circle circles[5];
 	svg::Rectangle rectangle;
+	//lines
+	lines[0].m_x1 = { 50,  50};
+	lines[1].m_x1 = {750,  50};
+	lines[2].m_x1 = {750, 750};
+	lines[3].m_x1 = { 50, 750};
+	for(svg::Line& line : lines)
+	{
+		line.m_x2 = {500, 300};
+		line.m_stroke_width = 40;
+		strcpy(line.m_stroke, "#000000");
+	}
 	//circles
 	circles[0].m_xc = { 50,  50};
 	circles[1].m_xc = { 50, 750};
@@ -87,19 +99,20 @@ void icon_cell(void)
 	for(svg::Circle& circle : circles)
 	{
 		circle.m_r = 50;
-		strcpy(circle.m_fill, "#000000");
+		strcpy(circle.m_fill, "#ff0000");
 	}
 	//rectangle
 	rectangle.m_width = 700;
 	rectangle.m_height = 700;
 	rectangle.m_x = {50, 50};
-	rectangle.m_stroke_width = 10;
+	rectangle.m_stroke_width = 40;
 	strcpy(rectangle.m_fill, "#add8e6");
 	strcpy(rectangle.m_stroke, "#000000");
 	//model
 	model.m_width = 800;
 	model.m_height = 800;
 	model.m_objects.push_back(&rectangle);
+	for(const svg::Line& line : lines) model.m_objects.push_back(&line);
 	for(const svg::Circle& circle : circles) model.m_objects.push_back(&circle);
 	//write
 	model.write("icons/cell.svg");
